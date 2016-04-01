@@ -1,0 +1,18 @@
+TO DO LIST
+- demander à la MOA si ils souhaitent conserver les noms des attributs des table ou si nous sommes autorisés à les changer
+	syntaxe : table_attribut
+		table en minuscule, 3-4 lettres
+		attribut en minuscule, mots entiers, si plusieurs mots alors ajout de majuscules
+	exemple : CODCOUR deviendrait cou_id 
+			  TOTAL-KM-FAITS deviendrait cou_totalKmFaits
+
+- demander à la MOA un exemple d'analyse technique détaillée et si nous sommes tenus de la faire
+
+- discuter avec JP sur comment représenter la contrainte C1 et la contrainte d'inclusion
+	- C1 : pourrait être implémentée dans le code cobol. Comparaison de km-faits et km-à-faire. 
+	  Si km-faits > km-à-faire alors message d'alerte dans F3 (enregistrement des programmes faits)
+	- CI : idem que C1
+
+- discuter avec JP des tables évènements A-FAIRE et FAIT : CODSEM est à la fois une date et un "produit"
+
+- discuter avec JP de l'attribut Total-Km-Faits : variable à calculer dans une autre table? Declencher un trigger lorsque F3 est rempli?
