@@ -1,0 +1,78 @@
+create database cycliste
+
+create table ADRESSE (
+				ADR-ID int(5) NOT NULL,
+				ADR-numvoie varchar(20) NOT NULL,
+				ADR-cp int(5) NOT NULL,
+				ADR-ville varchar(20) NOT NULL,
+				PAYS-ID int(5) NOT NULL,
+				dat-cre varchar(8) NOT NULL,
+				dat_maj varchar(8) NOT NULL,
+				dat_supp varchar(8) NOT NULL,
+				user_id int(5) NOT NULL,
+				PRIMARY KEY (ADR-ID),
+				FOREIGN KEY PAYS-ID REFERENCES PAYS (PAYS-ID)
+
+
+
+);
+
+create table PAYS (
+				PAYS-ID int(5) NOT NULL,
+				PAYS-NOM varchar(20) NOT NULL,
+				dat-cre varchar(8) NOT NULL,
+				dat_maj varchar(8) NOT NULL,
+				dat_supp varchar(8) NOT NULL,
+				user_id int(5) NOT NULL,
+				PRIMARY KEY (PAYS-ID)
+);
+
+create table ENTRAINEUR (
+				CODENTR int(3) NOT NULL,
+				NOM varchar(20) NOT NULL,
+				PRENOM varchar(20) NOT NULL,
+				DIPLOME varchar(25) NOT NULL,
+				dat-cre varchar(8) NOT NULL,
+				dat_maj varchar(8) NOT NULL,
+				dat_supp varchar(8) NOT NULL,
+				user_id int(5) NOT NULL,
+				PRIMARY KEY (CODENTR)
+);
+
+create table SEMAINE (
+				CODSEM int(2) NOT NULL,
+				GRANDTOUR varchar(10) NOT NULL,
+				dat-cre varchar(8) NOT NULL,
+				dat_maj varchar(8) NOT NULL,
+				dat_supp varchar(8) NOT NULL,
+				user_id int(5) NOT NULL,
+				PRIMARY KEY (CODSEM)
+);
+
+create table COUREUR (
+				CODCOUR int(3) NOT NULL,
+				NOM varchar(20) NOT NULL,
+				PRENOM varchar(20) NOT NULL,
+				ADR-ID int(5) NOT NULL,
+				TOTAL-KM-FAITS int(5) NOT NULL,
+				CODENTR int(3) NOT NULL,
+				dat-cre varchar(8) NOT NULL,
+				dat_maj varchar(8) NOT NULL,
+				dat_supp varchar(8) NOT NULL,
+				user_id int(5) NOT NULL,
+				PRIMARY KEY (CODCOUR),
+				FOREIGN KEY ADR-ID REFERENCES ADRESSE (ADR-ID),
+				FOREIGN KEY CODENTR REFERENCES ENTRAINEUR (CODENTR)
+);
+
+create table A-FAIRE (
+				KM-A-FAIRE int(4) NOT NULL,
+				CODCOUR int(3) NOT NULL,
+				CODSEM int(2) NOT NULL,
+				dat-cre varchar(8) NOT NULL,
+				dat_maj varchar(8) NOT NULL,
+				dat_supp varchar(8) NOT NULL,
+				user_id int(5) NOT NULL,				
+				FOREIGN KEY CODCOUR REFERENCES COUREUR (CODCOUR),
+				FOREIGN KEY CODSEM REFERENCES SEMAINE (CODSEM)
+);
