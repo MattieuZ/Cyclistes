@@ -1,0 +1,23 @@
+---------------------------------------------------------------------------------
+Logiciel Cyclistes
+Fonction : Menu
+04/04/2016
+---------------------------------------------------------------------------------
+Menu
+      0 "Affichage des coureurs oisifs".
+      1 "Mise à jours du fichier des coureurs".
+      2 "Enregistrement des programmes à effectuer".
+      3 "Enregistrement des entraînements effectues".
+      4 "Mise à jour des entraîneurs".
+      5 "Avancement des entraînements".
+      6 "Classement des coureurs".
+      7 "Remise à zero des entraînements d'une semaine".
+      Q "Quitter".
+
+
+
+
+---------------------------------------------------------------------------------
+Message Erreur :
+"Veuillez entrer votre choix"
+--Saisie--
